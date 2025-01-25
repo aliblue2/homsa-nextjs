@@ -4,9 +4,12 @@ import { GetPlaceComments } from "@/requests/place/getPlaceComments";
 import { GetPlaceFeaturesById } from "@/requests/place/getPlaceFeatures";
 import { Place, PlaceComment, PlaceFeatures } from "@/types/Place";
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
-
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
   const place: Place = await GetPlaceById(slug);
   const placeFeatures: PlaceFeatures = await GetPlaceFeaturesById(slug);
   const placeComments: PlaceComment[] = await GetPlaceComments(slug);
