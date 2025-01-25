@@ -1,5 +1,5 @@
 export async function GetPlaceFeaturesById(PlaceId: string) {
-  const response = await fetch(`${process.env.BASE_URL}/features/${PlaceId}`);
+  const response = await fetch(`https://airbnb-clone.liara.run/features/${PlaceId}`);
 
   if (!response.ok) {
     throw new Error("cant get place with this id");

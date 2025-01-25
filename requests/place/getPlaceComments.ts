@@ -1,5 +1,5 @@
 export async function GetPlaceComments(PlaceId: string) {
-  const response = await fetch(`${process.env.BASE_URL}/comments/${PlaceId}`);
+  const response = await fetch(`https://airbnb-clone.liara.run/comments/${PlaceId}`);
 
   if (!response.ok) {
     throw new Error("cant get place with this id");

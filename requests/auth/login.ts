@@ -20,7 +20,7 @@ export const UserLoginHandler = async (
   }
 
   if (errors.length === 0) {
-    const response = await fetch(`${process.env.BASE_URL}/login`, {
+    const response = await fetch(`https://airbnb-clone.liara.run/login`, {
       method: "POST",
       body: JSON.stringify({
         email: emailAddress,

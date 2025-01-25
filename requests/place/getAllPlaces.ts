@@ -1,5 +1,5 @@
 export async function GetAllPlaces() {
-  const response = await fetch(`${process.env.BASE_URL}/places`, {
+  const response = await fetch(`https://airbnb-clone.liara.run/places`, {
     cache: "no-store",
   });
 
