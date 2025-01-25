@@ -11,8 +11,8 @@ const AuthContainer: React.FC = () => {
   const mode = searchParams.get("mode") || "signup";
 
   return (
-    <div className="flex flex-col gap-8 items-center justify-center p-5 w-full h-full">
-        <Logo />
+    <div className="flex flex-col gap-5 items-center justify-center p-5 w-full h-full">
+      <Logo />
       {mode === "signup" ? <Signup /> : <Login />}
     </div>
   );

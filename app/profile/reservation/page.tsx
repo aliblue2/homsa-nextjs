@@ -1,13 +1,14 @@
-import { SwatchBook } from "lucide-react";
+import { BinocularsIcon } from "lucide-react";
+import { NextPage } from "next";
 
-const Page = ({}) => {
+const Page: NextPage = ({}) => {
   return (
     <div className="flex flex-col items-center justify-center gap-5">
       <div className="bg-gradient-to-b from-primaryColor to-accentColor p-5 rounded-full">
-        <SwatchBook size={128} className="text-white p-1" />
+        <BinocularsIcon size={128} className="text-white" />
       </div>
       <h6 className="text-accentColor text-center font-medium text-2xl md:text-3xl">
-        از منو برای دیدن رزرو ها استفاده کنید
+        هیچ رزوری ندارید.!
       </h6>
     </div>
   );

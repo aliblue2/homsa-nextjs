@@ -13,8 +13,10 @@ import CustomBtn from "../CustomBtn";
 import { Headphones, Menu, User2 } from "lucide-react";
 import MenuDrawer from "./MenuDrawer";
 import Link from "next/link";
+import useSession from "@/hooks/useSession";
 
 const Navbar = () => {
+  const session = useSession();
   const { scrollY } = useScroll();
   const headerColor = useTransform(scrollY, [0, 300], ["#0000", "#fff"]);
   const [menuDrawerVis, setMenuDrawerVis] = useState(false);
@@ -48,8 +50,13 @@ const Navbar = () => {
                 <Headphones size={18} />
               </CustomBtn>
               <CustomBtn>
-                <Link href={"/auth"} className="flex items-center justify-center gap-2">
-                  <span className="md:block hidden">ورود/ثبت‌نام</span>
+                <Link
+                  href={`${session ? "/profile" : "/auth"}`}
+                  className="flex items-center justify-center gap-2"
+                >
+                  <span className="md:block hidden">
+                    {session ? "پروفایل" : "ورود/ثبت‌نام"}
+                  </span>
                   <User2 size={18} />
                 </Link>
               </CustomBtn>
